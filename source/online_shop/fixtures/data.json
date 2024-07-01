@@ -1,0 +1,38 @@
+[
+{
+    "model": "online_shop.category",
+    "pk": 1,
+    "fields": {
+        "name": "Clothes",
+        "description": "dsadasdsadasda"
+    }
+},
+{
+    "model": "online_shop.category",
+    "pk": 2,
+    "fields": {
+        "name": "Car",
+        "description": "dsadsadaadasda"
+    }
+},
+{
+    "model": "online_shop.category",
+    "pk": 3,
+    "fields": {
+        "name": "Toys",
+        "description": "dsadsadsadacdasa"
+    }
+},
+{
+    "model": "online_shop.product",
+    "pk": 1,
+    "fields": {
+        "name": "Siut",
+        "description": "dsadasdasasdadadsad",
+        "category": 1,
+        "add_time": "2024-06-30T17:29:04.902Z",
+        "price": "1500.00",
+        "image": "https://www.themanual.com/wp-content/uploads/sites/9/2020/12/chris-hemsworth-boss-bottled-2017-campaign.jpg?p=1"
+    }
+}
+]

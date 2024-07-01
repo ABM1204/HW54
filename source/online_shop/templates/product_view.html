@@ -8,5 +8,7 @@
     <p><strong>Category:</strong> {{ product.category.name }}</p>
     <p><strong>Price:</strong> {{ product.price }}</p>
     <p><strong>Added on:</strong> {{ product.added_on }}</p>
-    <img src="{{ product.image }}" class="image_size" alt="{{ product.name }}">
+    <img src="{{ product.image }}" class="img-thumbnail" alt="{{ product.name }}">
+    <a href="{% url 'product_edit_view' product.id %}" class="btn btn-primary">Edit</a>
+    <a href="{% url 'delete_product_view' product.id %}" class="btn btn-danger">Delete</a>
 {% endblock %}
