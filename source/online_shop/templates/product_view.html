@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{ product.name }}</title>
+</head>
+<body>
+    <h1>{{ product.name }}</h1>
+    <p>Description {{ product.description }}</p>
+    <p>Category: {{ product.category.name }}</p>
+    <p>Price: {{ product.price }}</p>
+    <p>Added on: {{ product.added_on }}</p>
+    <img src="{{ product.image }}" alt="{{ product.name }}">
+</body>
+</html>
