@@ -1,15 +1,12 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>{{ product.name }}</title>
-</head>
-<body>
+{% extends 'base.html' %}
+
+{% block title %}{{ product.name }}{% endblock %}
+
+{% block content %}
     <h1>{{ product.name }}</h1>
-    <p>Description: {{ product.description }}</p>
-    <p>Category: {{ product.category.name }}</p>
-    <p>Price: {{ product.price }}</p>
-    <p>Added on: {{ product.added_on }}</p>
-    <img src="{{ product.image }}" alt="{{ product.name }}">
-</body>
-</html>
+    <p><strong>Description:</strong> {{ product.description }}</p>
+    <p><strong>Category:</strong> {{ product.category.name }}</p>
+    <p><strong>Price:</strong> {{ product.price }}</p>
+    <p><strong>Added on:</strong> {{ product.added_on }}</p>
+    <img src="{{ product.image }}" class="image_size" alt="{{ product.name }}">
+{% endblock %}

@@ -1,27 +1,20 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Products</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-</head>
-<body>
+{% extends 'base.html' %}
+
+{% block title %}Products{% endblock %}
+
+{% block content %}
     <h1>Products</h1>
-    <a href="{% url 'category_add_view' %}">Add category</a>
-    <a href="{% url 'product_add_view' %}">Add product</a>
-    <div class="container">
-        <ul class="products_list">
-            {% for product in products %}
-            <li>
-                <img src="{{ product.image }}" class="img-thumbnail" alt="product_image" style="width:300px;height:200px;"><br> 
-                <strong>Name: </strong> {{ product.name }}<br>
-                <strong>Category: </strong> {{ product.category }}<br>
-                <strong>Price: </strong> {{ product.price }}<br>
-                <a href="{% url 'product_view' product.id %}">View Details</a>
-            </li>
-            {% endfor %}
-        </ul>
+    <div class="card-deck">
+        {% for product in products %}
+        <div class="card">
+            <img src="{{ product.image }}" class="card-img-top" alt="product_image">
+            <div class="card-body">
+                <h5 class="card-title">{{ product.name }}</h5>
+                <p class="card-text"><strong>Category:</strong> {{ product.category.name }}</p>
+                <p class="card-text"><strong>Price:</strong> {{ product.price }}</p>
+                <a href="{% url 'product_view' product.id %}" class="btn btn-primary">View Details</a>
+            </div>
+        </div>
+        {% endfor %}
     </div>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-</body>
-</html>
+{% endblock %}
